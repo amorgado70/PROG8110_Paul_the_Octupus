@@ -1,14 +1,26 @@
-// Listen for orientation changes
-window.addEventListener("orientationchange", function() {
-    // Announce the new orientation number
-    alert(window.orientation);
-}, false);
+// Waits until phone device is ready
+$(document).ready(function(){
+    
+    // Checks device orientation and changes display accordingly
+    var checkOrientation = function() {
+        if (window.orientation == 90) {
+            $("#portraitMessage").hide();
+            $("p").css({"color": "black"});
+        }
+        else {
+            $("#portraitMessage").show();
+            $("p").css({"color": "blue"});
+        }
+    }        
+    
+    // Listen for orientation changes
+    window.addEventListener("orientationchange", function() {
+        // Announce the new orientation number
+        checkOrientation();
+    }, false);    
 
-$(document).ready(function(){        
-    $("button").click(function(){
-        $("h1, h2, p, portraitEntranceMessage").toggleClass("blue");
-    });
-    // Announce the new orientation number
-    alert(window.orientation);    
+    // Check orientation on page load    
+    checkOrientation();
+    
 });
 
