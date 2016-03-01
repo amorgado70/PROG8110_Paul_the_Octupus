@@ -1,0 +1,6 @@
+https://davidwalsh.name/orientation-change
+
+Using Animate.css and jQuery for easy Web Animation
+https://www.youtube.com/watch?v=CBQGl6zokMs
+Examples
+http://daneden.github.io/animate.css/

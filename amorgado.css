@@ -1,0 +1,14 @@
+        
+.blue {
+    color: blue;
+}
+                
+                
+#paulEntrance{
+            -webkit-animation-duration: 3s;
+            -webkit-animation-delay: 2s;
+            -webkit-animation-iteration-count: infinite;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
