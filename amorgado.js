@@ -5,11 +5,15 @@ $(document).ready(function(){
     var checkOrientation = function() {
         if (window.orientation == 90) {
             $("#portraitMessage").hide();
-            $("p").css({"color": "black"});
+            $("p").css({"color": "black"})
+            $("#paul").removeClass("paulEntrance");           
+            $("#paul").addClass("paulWaiting");
         }
         else {
             $("#portraitMessage").show();
             $("p").css({"color": "blue"});
+            $("#paul").removeClass("paulWaiting");
+            $("#paul").addClass("paulEntrance");
         }
     }        
     
