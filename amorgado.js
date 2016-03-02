@@ -7,7 +7,7 @@ $(document).ready(function(){
             $("#portraitMessage").hide();
             $("p").css({"color": "black"})
             $("#paul").removeClass("paulEntrance");           
-            $("#paul").addClass("paulGuessing");
+            /*$("#paul").addClass("paulGuessing");*/
         }
         else {
             $("#portraitMessage").show();
