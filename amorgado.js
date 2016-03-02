@@ -5,12 +5,14 @@ $(document).ready(function(){
     var checkOrientation = function() {
         if (window.orientation == 90) {
             $("#portraitMessage").hide();
+            $("#paulLocked").show();
             $("p").css({"color": "black"})
             $("#paul").removeClass("paulEntrance");           
             /*$("#paul").addClass("paulGuessing");*/
         }
         else {
             $("#portraitMessage").show();
+            $("#paulLocked").hide();
             $("p").css({"color": "blue"});
             $("#paul").removeClass("paulGuessing");
             $("#paul").addClass("paulEntrance");
@@ -27,4 +29,20 @@ $(document).ready(function(){
     checkOrientation();
     
 });
+
+// Drag and Drop
+ 
+$( init );
+ 
+function init() {
+  $('#makeMeDraggable').draggable();
+  $('#makeMeDroppable').droppable( {
+    drop: handleDropEvent
+  } );
+}
+ 
+function handleDropEvent( event, ui ) {
+  var draggable = ui.draggable;
+  alert( 'The square with ID "' + draggable.attr('id') + '" was dropped onto me!' );
+}
 
