@@ -4,6 +4,9 @@ $(document).ready(function(){
     // Checks device orientation and changes display accordingly
     var checkOrientation = function() {
         if (window.orientation == 90) {
+            $('#makeMeDroppable').show();
+            $('#makeMeDraggable').show();
+            $( initDragDrop );            
             $("#portraitMessage").hide();
             $("#paulLocked").show();
             $("p").css({"color": "black"})
@@ -11,6 +14,8 @@ $(document).ready(function(){
             /*$("#paul").addClass("paulGuessing");*/
         }
         else {
+            $('#makeMeDroppable').hide();
+            $('#makeMeDraggable').hide();
             $("#portraitMessage").show();
             $("#paulLocked").hide();
             $("p").css({"color": "blue"});
@@ -32,9 +37,7 @@ $(document).ready(function(){
 
 // Drag and Drop
  
-$( init );
- 
-function init() {
+function initDragDrop() {
   $('#makeMeDraggable').draggable();
   $('#makeMeDroppable').droppable( {
     drop: handleDropEvent
