@@ -7,12 +7,12 @@ $(document).ready(function(){
             $("#portraitMessage").hide();
             $("p").css({"color": "black"})
             $("#paul").removeClass("paulEntrance");           
-            $("#paul").addClass("paulWaiting");
+            $("#paul").addClass("paulGuessing");
         }
         else {
             $("#portraitMessage").show();
             $("p").css({"color": "blue"});
-            $("#paul").removeClass("paulWaiting");
+            $("#paul").removeClass("paulGuessing");
             $("#paul").addClass("paulEntrance");
         }
     }        
