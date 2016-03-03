@@ -1,81 +1,38 @@
-<!DOCTYPE HTML>
+<!Doctype html>
 <html>
-	<head>
-		<title>PROG8110 - Assignment I - Paul the Octopus - nativeDroid II</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />            
-		<link rel="stylesheet" href="/vendor/waves/waves.min.css" />
-		<link rel="stylesheet" href="/vendor/wow/animate.css" />
-<!-- 		<link rel="stylesheet" href="/css/nativedroid2.css" /> -->
-        <link rel="stylesheet" href="amorgado.css" />
-
-		<meta name="mobile-web-app-capable" content="yes">
-	 	<meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://*.firebaseio.com wss://*.firebaseio.com http://*.openstreetmap.org https://auth.firebase.com https://accounts.google.com https://rippleapi.herokuapp.com data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />
         <!-- Cordova.js ... brings in plugin dependencies -->
-        <script src="cordova.js"></script>		
-                
-	</head>
-	<body>        
+        <script src="cordova.js"></script>
+        <!-- AngularJS -->
+        <script src="js/angular.min.js"></script>
 
+        <!-- Firebase -->
+        <script src="js/firebase-debug.js"></script>
 
-			<!--<nd2-include data-src="/examples/fragments/panel.left.html"></nd2-include>-->
+        <!-- AngularFire -->
+        <script src="js/angularfire.min.js"></script>
+        <script src="js/index.js"></script>
+        <style>
+            .ng-hide{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <form ng-hide="auth != null">
+                <p>This is a chat program that uses firebase as the back end. Click the login button to verify your user name with google and send messages.</p>
+                <button ng-hide="google!=null" type = "submit" ng-click="login()">Login</button>
+            </form>
+            <form ng-hide="auth == null">
+                <div ng-repeat="(n, message) in messages track by n">{{message.sender}}:{{message.text}}</div>
+                <p >Message : <input type="text" ng-model="newMessageText"></p>
+                <button type = "submit" ng-click="addMessage()">Send</button>
+                <button ng-click="logout()">Logout</button>
+            </form>
+        </div>
 
-			<!--<div data-role="panel" id="bottomsheet" data-animate="false" data-position='bottom' data-display="overlay">
-				<nd2-include data-src="/examples/fragments/bottom.sheet.html"></nd2-include>
-			</div>-->
-
-				<!-- This brings the bottom menu -->
-                <!--<a href="#bottomsheet" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='1.2s'><i class="zmdi zmdi-more-vert"></i></a>
-				<!-- This brings the leftpanel menu -->
-                <!-- <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a> -->
-				<h4 id="pageHeader" class="animated bounceInDown">Paul the Octopus - Divination Game</h4>                
-
-
-				<!-- Source of image :  http://creativelyuncorked.com/wp-content/uploads/2014/05/icon-horizontal.jpg -->
-           
-				<!-- Source of PAUL image : http://www.clipartpanda.com/clipart_images/octopus-clipart-image-4302613 -->
-                <!-- Source of CAGE image : http://vignette1.wikia.nocookie.net/scribblenauts/images/b/b4/Steel_Cage.png/revision/latest?cb=20130105175138 -->
-
-				<div id="portraitMessage">
-					<h4 id="portraitMessage1"  class="animated slideInLeft">This aquarium is a little narrow for Paul the Octopus.</h4>
-                    <h4 id="portraitMessage2"  class="animated slideInLeft">Please rotate your device</h4>
-                    <img id="portraitMessage3" class="animated slideInLeft" src="img/rotate-your-phone.jpg" style="width:80px;height:70px;"/>
-				</div>        
-        
-                <div id="paul"></div>             
-                
-                <div id="paulLocked">
-                  <img id="paulInCage" class="animated shake" src="img/paul-the-octopus.jpg"/>
-                  <img id="cage" class="animated bounceInDown" src="img/cage.png"/>
-                </div>                                                                                                   
-
-        
-<div id="content" style="height: 100%;">
-    
-    <div id="foodBox1"> </div>
-    <div id="foodBox2"> </div>
-    <div id="flagGermany" class="allflags"> </div>    
-    <div id="flagArgentina" class="allflags"> </div>
-    <div id="flagSpain" class="allflags"> </div>
-    <div id="flagBrazil" class="allflags"> </div>
-    <div id="flagNetherlands" class="allflags"> </div>
-    <div id="flagEngland" class="allflags"> </div>
-    <div id="flagUruguay" class="allflags"> </div>
- 
-</div>        
-        
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-		<script src="/vendor/waves/waves.min.js"></script>
-		<script src="/vendor/wow/wow.min.js"></script>
-<!-- 		<script src="/js/nativedroid2.js"></script>
-		<script src="/nd2settings.js"></script> -->
-        <script src="amorgado.js"></script>   
-        
-	</body>
+    </body>
 </html>
