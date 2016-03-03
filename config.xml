@@ -2,9 +2,9 @@
 <widget id="io.github.amorgado70.paultheoctopus" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Paul The Octopus</name>
     <description>
-        A simple divination game.
+        A simple chatapp with a firebase backend.
     </description>
-    <author email="alfredo.mor9ado@gmail.com" href="https://github.com/amorgado70/">
+    <author email="rhildred@gmail.com" href="https://rhildred.github.io">
         Apache Cordova Team
     </author>
     <content src="index.html" />
