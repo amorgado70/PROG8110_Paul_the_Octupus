@@ -1,7 +1,24 @@
-.animated {
-  -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-iteration-count: infinite;
+/* Several pieces of this CSS3 are based on the following solution:
+http://daneden.github.io/animate.css/ 
+
+This animation solution for PhonegapBuild works only with "-webkit-".
+*/
+
+/* Color pallete : http://paletton.com/#uid=30q0u0krew0gWHPm9A3vBrAyPlC */
+
+/* Page Header */
+
+#pageHeader{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 0.5em;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+	background-color: #22B802;
+	-webkit-animation-name: bounceInDown;
+    -webkit-animation-delay: 0s;    
+	-webkit-animation-duration: 2s;    
+    -webkit-animation-fill-mode: both;
 }
 
 @-webkit-keyframes bounceInDown {
@@ -32,11 +49,7 @@
   }
 }
 
-.bounceInDown {
-  -webkit-animation-name: bounceInDown;
-}
-
-/* Color pallete : http://paletton.com/#uid=30q0u0krew0gWHPm9A3vBrAyPlC */
+/* Paul Entrance */
 
 @-webkit-keyframes paulEntrance {
   0% {
@@ -371,14 +384,6 @@
     border-top: none;
     background: #AC4700;}
 
-#pageHeader{
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 0.5em;
-    background-color: #22B802;
-  -webkit-animation-duration: 2s;    
-  -animation-duration: 2s;     
-}
 
 #portraitMessage1{
    -webkit-animation-delay: 2s;    
