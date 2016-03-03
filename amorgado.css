@@ -73,7 +73,7 @@
 }
 
 .paulEntrance {
-    margin-top: 20%;
+    margin-top: 10%;
     width: 300px;
     height: 300px;
     margin-left: auto;
@@ -224,7 +224,6 @@
 .paulGuessing {
     margin-top: 5%;
     width: 300px;
-    height: 300px;
     background-image: url("/img/paul-the-octopus.jpg");
     position :relative;
     
@@ -245,17 +244,17 @@
 
 #paulLocked{
     position: relative;
-    left: 0;
+    left: 35%;
     top: 0;
-    width: 300px;    
+    width: 100%;    
     margin-left: auto;
-    margin-right: auto;    
+    margin-right: auto;
 }
 #cage {
     position: absolute;
     top: 0;
     left: 0;
-    width: 300px;
+    width: 30%;
   -webkit-animation-duration: 5s;
   -animation-duration: 5s;
 }
@@ -263,8 +262,8 @@
     position: relative;
     top: 0;
     left: 0;
-    width: 300px;
-    margin-top: 80px;
+    width: 30%;
+    margin-top: 5%;
   -webkit-animation-duration: 12s;
   -webkit-animation-iteration-count: infinite;    
   -animation-duration: 12s;
@@ -273,16 +272,57 @@
 
 /* Drag and Drop */
 
-#makeMeDraggable {
+.allflags {    
+    position: absolute;
+    top: 85%;
+    width: 44px;
+    height: 26px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+}
+
+#flagGermany {    
+    left: 8%;
+    background-image: url(img/germany.png);
+}
+
+#flagArgentina {    
+    left: 20%;
+    background-image: url(img/argentina.png);}
+
+#flagSpain {    
+    left: 32%;
+    background-image: url(img/spain.png);}
+
+#flagBrazil {    
+    left: 44%;
+    background-image: url(img/brazil.png);}
+
+#flagNetherlands {    
+    left: 56%;
+    background-image: url(img/ghana.png);}
+
+#flagEngland {    
+    left: 68%;
+    background-image: url(img/england.png);}
+
+#flagUruguay {    
+    left: 80%;
+    background-image: url(img/uruguay.png);}
+
+#makeMeDraggable {    
     position: absolute;
     top: 50%;
     left: 2%;   
     width: 25%;
     height: 10%;
+    z-index: 1;
     background: red; }
+
 #makeMeDroppable1 {     
     position: absolute;
-    top: 25%;
+    top: 70%;
     left: 73%;   
     width: 25%;
     height: 10%;
@@ -291,7 +331,7 @@
 
 #makeMeDroppable2 { 
     position: absolute;
-    top: 25%;
+    top: 70%;
     left: 2%;   
     width: 25%;
     height: 10%;

@@ -41,7 +41,10 @@ $(document).ready(function(){
  
 function initDragDrop() {
   $('#makeMeDraggable').draggable();
-  $('#makeMeDroppable').droppable( {
+  $('#makeMeDroppable1').droppable( {
+    drop: handleDropEvent
+  } );      
+  $('#makeMeDroppable2').droppable( {
     drop: handleDropEvent
   } );
 }
