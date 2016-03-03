@@ -1,78 +1,127 @@
-# nativeDroid2
+# [Angular Firebase Chat](https://github.com/rhildred/angularfirebasechat)
 
-![nativeDroid2](http://nativedroid.godesign.ch/material/github_banner.jpg)
+Last year when I did mobile development with phonegap, I spent some time on node.js with socket.io. [Firebase](https://www.firebase.com/docs/web/quickstart.html) is a ready-made back end that uses similar push technology to keep multiple clients up to date.
 
-jQueryMobile Template inspired by Material Design
+The dependencies for firebase are:
 
-# Install
+```
 
-  **git**
+<script src="cordova.js"></script>
+<!-- AngularJS -->
+<script src="js/angular.min.js"></script>
 
-```git clone https://github.com/godesign/nativeDroid2.git```
+<!-- Firebase -->
+<script src="js/firebase.js"></script>
 
-  **bower**
+<!-- AngularFire -->
+<script src="js/angularfire.min.js"></script>
 
-```bower install nativeDroid2```
+```
 
-# Demo & [Documentation](http://nativedroid.scripter.click)
+A really neat thing about firebase is that it allows for 3 way data binding. In this case we will bind the `messages` array to an object stored in firebase:
 
-Basic Elements
--
-- [Typography and Text Elements](http://nd2.godesign.ch/examples/elements/text.html)
-- [Grid System](http://nd2.godesign.ch/examples/elements/grid.html)
-- [Buttons & FABS](http://nd2.godesign.ch/examples/elements/buttons.html)
-- [Header & Footer](http://nd2.godesign.ch/examples/elements/header_footer.html)
-- [Listviews](http://nd2.godesign.ch/examples/elements/listviews.html)
-- [Form](http://nd2.godesign.ch/examples/elements/forms.html)
-- [Table](http://nd2.godesign.ch/examples/elements/tables.html)
-- [Dialog & Popups](http://nd2.godesign.ch/examples/elements/dialog_popups.html)
-- [Panels](http://nd2.godesign.ch/examples/elements/panels.html)
-- [Autocomplete](http://nd2.godesign.ch/examples/elements/autocomplete.html)
-- [Collapsible & Accordions](http://nd2.godesign.ch/examples/elements/collapsible_accordions.html)
+```
+<form ng-hide="auth == null">
+    <div ng-repeat="(n, message) in messages track by n">{{message.sender}}:{{message.text}}</div>
+    <p >Message : <input type="text" ng-model="newMessageText"></p>
+    <button type = "submit" ng-click="addMessage()">Send</button>
+    <button ng-click="logout()">Logout</button>
+</form>
 
-Extended Elements
--
-- [Tabs](http://nd2.godesign.ch/examples/extended/tabs.html)
-- [Cards](http://nd2.godesign.ch/examples/extended/cards.html)
-- [Search](http://nd2.godesign.ch/examples/extended/search.html)
-- [Snackbars & Toasts](http://nd2.godesign.ch/examples/extended/toasts.html)
-- [Charts](http://nd2.godesign.ch/examples/extended/charts.html)
-- [Icons](http://nd2.godesign.ch/examples/extended/icons.html)
-- [Bottom Sheets](http://nd2.godesign.ch/examples/extended/bottomsheet.html)
+```
 
-Widgets
--
-- [nd2-ad](http://nativedroid.scripter.click/nd2-ad/)
-- [nd2-include](http://nativedroid.scripter.click/nd2-include/)
+We create an app on firebase, to which we get a url, in my case `https://dazzling-heat-1553.firebaseio.com` We can 3 way bind a data structure to this url like this:
 
-Nice to Know
--
-- [Colors & Styles](http://nd2.godesign.ch/info/colors_and_styles.html)
-- [Credits & License](http://nd2.godesign.ch/info/credits.html)
+```
+$scope.ref = new Firebase("https://dazzling-heat-$firebaseArray($scope.ref);
+```
 
-# License
-*nativeDroid2 is distributed under the MIT-License*
+Once bound, we can add a new message onto all of the clients:
 
-The MIT License (MIT)
+```
+$scope.addMessage = function() {
+    $scope.messages.$add({
+        text: $scope.newMessageText,
+        sender: $scope.auth.google.displayName,
+        uid:$scope.auth.uid
+    });
+    $scope.newMessageText = "";
+};
 
-Copyright (c) 2015 Raphael Wildhaber, Godesign Webpublishing GmbH / http://nativedroid.godesign.ch
+```
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+We don't want people to add messages anonymously. We use google oauth2 to authenticate:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+```
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+$scope.login =function() {
+    var provider = 'google';
+    var scope = {scope:'email'};
+    var auth = $firebaseAuth(getRef());
+    auth.$authWithOAuthPopup(provider, scope, function(error, authData){
+        if (error) {
+            // an error occurred while attempting login
+            alert("error: " + error);
+        }
+    });
+};
+$scope.logout = function(){
+    $scope.auth = null;
+    getRef().unauth();
+}
 
+```
 
+We create a rule on firebase to protect our data:
+
+```
+{
+    "rules": {
+        ".read": false,
+        ".write": false,
+        "messages":{
+          ".read": "auth != null",
+          "$message":{
+            ".write":"auth != null",
+            "uid":{
+              ".validate": "newData.val() == auth.uid"
+            }
+          }
+        }
+    }
+```
+
+There was one pretty big gotcha with firebase this year. The latest cordova (cli-5.2.0) is broken with respect to firebase's oauth2 implementation. After messing about with it for way too long. I ended with this fix `<preference name="phonegap-version" value="3.7.0" />` being the active ingredient:
+
+```
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.github.rhildred.simplechat" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Simple chat</name>
+    <description>
+        A simple chatapp with a firebase backend.
+    </description>
+    <author email="rhildred@gmail.com" href="https://rhildred.github.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <preference name="phonegap-version" value="3.7.0" />
+    <plugin name="org.apache.cordova.inappbrowser" />
+    <allow-navigation href="https://*/*" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
+```
+
+Firebase is an amazing tool to share state among multiple clients. Check the running ap out [here](https://rhildred.github.io/angularfirebasechat/www)!
