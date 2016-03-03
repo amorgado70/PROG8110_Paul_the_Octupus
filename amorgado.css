@@ -1,3 +1,5 @@
+/* Color pallete : http://paletton.com/#uid=30q0u0krew0gWHPm9A3vBrAyPlC */
+
 @-webkit-keyframes paulEntrance {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
@@ -73,7 +75,7 @@
 }
 
 .paulEntrance {
-    margin-top: 10%;
+    margin-top: 12%;
     width: 300px;
     height: 300px;
     margin-left: auto;
@@ -311,29 +313,44 @@
     left: 80%;
     background-image: url(img/uruguay.png);}
 
-#makeMeDraggable {    
+#foodBox1 {     
     position: absolute;
-    top: 50%;
-    left: 2%;   
-    width: 25%;
-    height: 10%;
-    z-index: 1;
-    background: red; }
-
-#makeMeDroppable1 {     
-    position: absolute;
-    top: 70%;
+    top: 60%;
     left: 73%;   
     width: 25%;
     height: 10%;
-    border: 1px solid black;
-    background: blue;}
+    border: 5px solid black;
+    border-top: none;
+    background: #AC4700;}
 
-#makeMeDroppable2 { 
+#foodBox2 { 
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 2%;   
     width: 25%;
     height: 10%;
-    border: 1px solid black;
-    background: blue;}
+    border: 5px solid black;
+    border-top: none;
+    background: #AC4700;}
+
+#pageHeader{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 0.5em;
+    background-color: #22B802;
+  -webkit-animation-duration: 2s;    
+  -animation-duration: 2s;     
+}
+
+#portraitMessage1{
+   -webkit-animation-delay: 2s;    
+  -animation-delay: 2s;     
+}
+#portraitMessage2{
+   -webkit-animation-delay: 3s;    
+  -animation-delay: 3s;     
+}
+#portraitMessage2{
+   -webkit-animation-delay: 4s;    
+  -animation-delay: 4s;     
+}

@@ -4,20 +4,33 @@ $(document).ready(function(){
     // Checks device orientation and changes display accordingly
     var checkOrientation = function() {
         if (window.orientation == 90) {
-            $('#makeMeDroppable1').show();
-            $('#makeMeDroppable2').show();
-            $('#makeMeDraggable').show();
+            $('#foodBox1').show();
+            $('#foodBox2').show();
+            $('#flagGermany').show();
+            $('#flagArgentina').show();
+            $('#flagSpain').show();
+            $('#flagBrazil').show();
+            $('#flagNetherlands').show();
+            $('#flagEngland').show();
+            $('#flagUruguay').show();
             $( initDragDrop );            
             $("#portraitMessage").hide();
             $("#paulLocked").show();
             $("p").css({"color": "black"})
-            $("#paul").removeClass("paulEntrance");           
+            $("#paul").removeClass("paulEntrance");
+            $("#pageHeader").removeClass("animated bounceInDown");
             /*$("#paul").addClass("paulGuessing");*/
         }
         else {
-            $('#makeMeDroppable1').hide();
-            $('#makeMeDroppable2').hide();
-            $('#makeMeDraggable').hide();
+            $('#foodBox1').hide();
+            $('#foodBox2').hide();
+            $('#flagGermany').hide();
+            $('#flagArgentina').hide();
+            $('#flagSpain').hide();
+            $('#flagBrazil').hide();
+            $('#flagNetherlands').hide();
+            $('#flagEngland').hide();
+            $('#flagUruguay').hide();
             $("#portraitMessage").show();
             $("#paulLocked").hide();
             $("p").css({"color": "blue"});
@@ -40,11 +53,17 @@ $(document).ready(function(){
 // Drag and Drop
  
 function initDragDrop() {
-  $('#makeMeDraggable').draggable();
-  $('#makeMeDroppable1').droppable( {
+  $('#flagGermany').draggable();
+  $('#flagArgentina').draggable();
+  $('#flagSpain').draggable();
+  $('#flagBrazil').draggable();
+  $('#flagNetherlands').draggable();
+  $('#flagEngland').draggable();
+  $('#flagUruguay').draggable();    
+  $('#foodBox1').droppable( {
     drop: handleDropEvent
   } );      
-  $('#makeMeDroppable2').droppable( {
+  $('#foodBox2').droppable( {
     drop: handleDropEvent
   } );
 }
