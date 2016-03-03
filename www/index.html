@@ -2,37 +2,23 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://*.firebaseio.com wss://*.firebaseio.com http://*.openstreetmap.org https://auth.firebase.com https://accounts.google.com https://rippleapi.herokuapp.com data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />
         <!-- Cordova.js ... brings in plugin dependencies -->
         <script src="cordova.js"></script>
-        <!-- AngularJS -->
-        <script src="js/angular.min.js"></script>
+        
+		<link rel="stylesheet" href="/vendor/wow/animate.css" />
+        <link rel="stylesheet" href="amorgado.css" />        
 
-        <!-- Firebase -->
-        <script src="js/firebase-debug.js"></script>
-
-        <!-- AngularFire -->
-        <script src="js/angularfire.min.js"></script>
-        <script src="js/index.js"></script>
-        <style>
-            .ng-hide{
-                display:none;
-            }
-        </style>
     </head>
     <body>
-        <div ng-app="myApp" ng-controller="myCtrl">
-            <form ng-hide="auth != null">
-                <p>This is a chat program that uses firebase as the back end. Click the login button to verify your user name with google and send messages.</p>
-                <button ng-hide="google!=null" type = "submit" ng-click="login()">Login</button>
-            </form>
-            <form ng-hide="auth == null">
-                <div ng-repeat="(n, message) in messages track by n">{{message.sender}}:{{message.text}}</div>
-                <p >Message : <input type="text" ng-model="newMessageText"></p>
-                <button type = "submit" ng-click="addMessage()">Send</button>
-                <button ng-click="logout()">Logout</button>
-            </form>
-        </div>
+
+        <h4 id="pageHeader" class="animated bounceInDown">Paul the Octopus - Divination Game</h4>
 
     </body>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.mobile.min.js"></script>    
+    <script src="/vendor/wow/wow.min.js"></script>
+    <script src="amorgado.js"></script>    
+    
 </html>
