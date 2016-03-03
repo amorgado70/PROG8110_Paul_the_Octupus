@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.github.amorgado70.paultheoctopus" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Paul The Octopus</name>
+    <name>Paul The Octopus 6</name>
     <description>
         A simple chatapp with a firebase backend.
     </description>
