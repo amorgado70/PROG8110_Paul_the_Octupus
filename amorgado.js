@@ -4,7 +4,8 @@ $(document).ready(function(){
     // Checks device orientation and changes display accordingly
     var checkOrientation = function() {
         if (window.orientation == 90) {
-            $('#makeMeDroppable').show();
+            $('#makeMeDroppable1').show();
+            $('#makeMeDroppable2').show();
             $('#makeMeDraggable').show();
             $( initDragDrop );            
             $("#portraitMessage").hide();
@@ -14,7 +15,8 @@ $(document).ready(function(){
             /*$("#paul").addClass("paulGuessing");*/
         }
         else {
-            $('#makeMeDroppable').hide();
+            $('#makeMeDroppable1').hide();
+            $('#makeMeDroppable2').hide();
             $('#makeMeDraggable').hide();
             $("#portraitMessage").show();
             $("#paulLocked").hide();

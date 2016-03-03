@@ -275,16 +275,25 @@
 
 #makeMeDraggable {
     position: absolute;
-    top: 50px;
-    left: 50px;    
-    width: 300px;
-    height: 300px;
+    top: 50%;
+    left: 2%;   
+    width: 25%;
+    height: 10%;
     background: red; }
-#makeMeDroppable { 
+#makeMeDroppable1 {     
     position: absolute;
-    top: 20px;
-    left: 20px;   
-    width: 300px;
-    height: 300px;
+    top: 25%;
+    left: 73%;   
+    width: 25%;
+    height: 10%;
+    border: 1px solid black;
+    background: blue;}
+
+#makeMeDroppable2 { 
+    position: absolute;
+    top: 25%;
+    left: 2%;   
+    width: 25%;
+    height: 10%;
     border: 1px solid black;
     background: blue;}
