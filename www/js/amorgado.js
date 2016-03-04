@@ -28,7 +28,9 @@ $(document).ready(function(){
             $( initDragDrop );         
             $("#portraitMessage").hide();
             $("#paulEntrance").hide();
+            $("#paulArea").show();
             $("#cage").addClass("cageIn");
+            $("#paulPlace").addClass("paulLocked");
             $("#pageHeader").removeClass("bounceInDown");
         }
         else {
@@ -41,6 +43,7 @@ $(document).ready(function(){
             $("#flagNetherlands").hide();
             $("#flagEngland").hide();
             $("#flagUruguay").hide();
+            $("#paulArea").hide();            
             $("#portraitMessage").show();
             $("#paulEntrance").show();
         }
@@ -84,6 +87,9 @@ function handleDropEvent( event, ui ) {
 function startGuessing(){
     $("#cage").removeClass("cageIn");
     $("#cage").addClass("cageOut");
+    $("#paulPlace").removeClass("paulLocked");
+    $("#paulPlace").addClass("paulGuessing");
+    
  }
 
 function paulGuessing(){
