@@ -85,7 +85,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 @-webkit-keyframes slideInLeft {
   0% {
-    -webkit-transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-110%, 0, 0);
     visibility: visible;
   }
 
@@ -127,7 +127,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 }
 
 #paulEntrance {
-    margin-top: 35%;
+    margin-top: 7em;
     width: 300px;
     height: 300px;
     margin-left: auto;
@@ -143,6 +143,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
   -webkit-animation-iteration-count: infinite;   
 }
 
+/* Paul Guessing */
 
 @-webkit-keyframes paulGuessing {
   0%, 35%, 65%, 90%, 100% {
@@ -289,10 +290,12 @@ This animation solution for PhonegapBuild works only with "-webkit-".
   -animation-iteration-count: infinite;    
 }
 
+/* Paul Locked */
+
 #paulLocked{
     position: relative;
     left: 35%;
-    top: 0;
+    top: 8em;
     width: 100%;    
     margin-left: auto;
     margin-right: auto;
@@ -302,19 +305,62 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     top: 0;
     left: 0;
     width: 30%;
-  -webkit-animation-duration: 5s;
-  -animation-duration: 5s;
+    -webkit-animation-name: bounceInDown;
+    -webkit-animation-duration: 5s;
 }
+
+@-webkit-keyframes bounceInDown {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+  }
+}
+
 #paulInCage {
     position: relative;
     top: 0;
     left: 0;
     width: 30%;
     margin-top: 5%;
+  -webkit-animation-name: shake;
   -webkit-animation-duration: 12s;
-  -webkit-animation-iteration-count: infinite;    
-  -animation-duration: 12s;
-  -animation-iteration-count: infinite;   
+  -webkit-animation-iteration-count: infinite;  
+}
+
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+  }
 }
 
 /* Drag and Drop */
