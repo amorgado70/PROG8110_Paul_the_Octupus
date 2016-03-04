@@ -28,7 +28,7 @@ $(document).ready(function(){
             $( initDragDrop );         
             $("#portraitMessage").hide();
             $("#paulEntrance").hide();
-            $("#paulLocked").show();
+            $("#cage").addClass("cageIn");
             $("#pageHeader").removeClass("bounceInDown");
         }
         else {
@@ -41,7 +41,6 @@ $(document).ready(function(){
             $("#flagNetherlands").hide();
             $("#flagEngland").hide();
             $("#flagUruguay").hide();
-            $("#paulLocked").hide();
             $("#portraitMessage").show();
             $("#paulEntrance").show();
         }
@@ -78,8 +77,16 @@ function handleDropEvent( event, ui ) {
   $(this).droppable( 'disable' );
   countDrops++;
   if (countDrops == 2) {
-    /*alert( 'Fim de jogo' );*/
     startGuessing();
   }
+}
+    
+function startGuessing(){
+    $("#cage").removeClass("cageIn");
+    $("#cage").addClass("cageOut");
+ }
+
+function paulGuessing(){
+
 }
 
