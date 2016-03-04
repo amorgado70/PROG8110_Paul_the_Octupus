@@ -67,6 +67,6 @@ function initDragDrop() {
  
 function handleDropEvent( event, ui ) {
   var draggable = ui.draggable;
-  alert( 'The square with ID "' + draggable.attr('id') + '" was dropped onto me!' );
+  alert( 'The square with ID "' + draggable.attr('id') + '" was dropped onto ' + $(this).attr('id') + ' me!');
 }
 

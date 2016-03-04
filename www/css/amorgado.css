@@ -96,12 +96,13 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 /* Paul Entrance */
 
-
 #paulEntrance {
     width: 300px;
     height: 300px;
+    margin-top: 120px;
     margin-left: auto;
     margin-right: auto;
+    background-size: contain;
     background-image: url("../img/paul-the-octopus.jpg");   
   -webkit-animation-name: paulEntrance;
   -webkit-animation-delay: 2s;
@@ -109,6 +110,14 @@ This animation solution for PhonegapBuild works only with "-webkit-".
   -webkit-animation-fill-mode: both;
   -webkit-animation-direction: alternate;
   -webkit-animation-iteration-count: infinite;   
+}
+
+@media screen and (max-width: 380px) {
+    #paulEntrance {        
+        width: 200px;
+        height: 200px;
+        margin-top: 120px;
+    }
 }
 
 @-webkit-keyframes paulEntrance {
@@ -270,6 +279,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 .paulGuessing {
     margin-top: 5%;
     width: 300px;
+    background-size: contain;
     background-image: url("../img/paul-the-octopus.jpg");
     position :relative;
     
