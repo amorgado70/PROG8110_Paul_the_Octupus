@@ -28,7 +28,9 @@ $(document).ready(function(){
             $( initDragDrop );         
             $("#portraitMessage").hide();
             $("#paulEntrance").hide();
+            $("#restart").show();
             $("#paulArea").show();
+            $("#crossX").show();
             $("#cage").addClass("cageIn");
             $("#paulPlace").addClass("paulLocked");
             $("#pageHeader").removeClass("bounceInDown");
@@ -44,6 +46,8 @@ $(document).ready(function(){
             $("#flagEngland").hide();
             $("#flagUruguay").hide();
             $("#paulArea").hide();            
+            $("#crossX").hide();
+            $("#restart").hide();
             $("#portraitMessage").show();
             $("#paulEntrance").show();
         }

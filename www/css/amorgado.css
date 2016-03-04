@@ -26,6 +26,16 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 	background-color: #22B802;
 }
 
+#restart{
+    
+    padding: 0.5em 1em;
+    font-family: "Arial Black", Gadget, sans-serif;
+    text-decoration: none;
+    color: black;
+    background-color: #AC4700;
+    -webkit-border-radius: 5px;
+}
+
 .bounceInDown{
     -webkit-animation-name: bounceInDown;
     -webkit-animation-delay: 0s;    
@@ -234,7 +244,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 #cage {
     position: absolute;
-    top: 0;
+    top: -10%;
     left: 0;
     width: 30%;
 }
@@ -385,7 +395,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 #foodBox2 {     
     position: absolute;
     top: 60%;
-    left: 73%;   
+    left: 68%;   
     width: 25%;
     height: 10%;
     border: 5px solid black;
@@ -395,3 +405,11 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     text-align: right;
     padding-right: 1em;
     background: #AC4700;}
+
+#crossX {     
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: black;
+    font-size: 5em;}
