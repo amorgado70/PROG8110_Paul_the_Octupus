@@ -477,3 +477,10 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     }    
 
 }
+
+#finalResult {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 8%;
+}

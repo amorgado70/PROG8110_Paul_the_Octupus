@@ -37,6 +37,7 @@ $(document).ready(function(){
             $("#flagUruguay").hide();
             $("#paulArea").hide();            
             $("#score").hide();
+            $("#finalResult").hide();
             $("#restart").hide();
             $("#portraitMessage").show();
             $("#history").show();
@@ -63,7 +64,7 @@ $(document).ready(function(){
     $("#flagBrazil").show();
     $("#flagNetherlands").show();
     $("#flagEngland").show();
-    $("#flagUruguay").show();      
+    $("#flagUruguay").show();          
     $( initDragDrop );
  }
     
@@ -90,11 +91,15 @@ var countDrops = 0;
 function handleDropEvent( event, ui ) {
   var draggable = ui.draggable;
   var droppable = $(this).attr("id");
-  /*alert( 'The square with ID "' + draggable.attr("id") + '" was dropped onto ' + droppable + ' me!');*/
+  /*alert( 'The square with ID "' + draggable.attr("id") + '" was dropped onto ' + droppable + ' me!');}*/
+  var oponent = draggable.attr("id").substring(4,20);
+  if (droppable == "foodBox1"){      
+      $("#winner").text(oponent);
+  }
   draggable.css({"top":$(this).css("top")});
   draggable.css({"left":$(this).css("left")});     
   draggable.draggable( 'disable' );
-  $(this).text(draggable.attr("id").substring(4,20));
+  $(this).text(oponent);
   $(this).droppable( 'disable' );
   countDrops++;
   if (countDrops == 2) {
@@ -129,7 +134,7 @@ function score2(){
 
 function score3(){
     $("#score").text('2 X 1');
-    
+    $("#finalResult").show();    
 }
 
 
