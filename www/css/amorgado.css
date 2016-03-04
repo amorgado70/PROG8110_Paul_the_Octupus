@@ -164,32 +164,28 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     -webkit-animation-delay: 2s;
     -webkit-animation-duration: 36s;
     -webkit-animation-fill-mode: both;
-    -webkit-animation-direction: alternate;
-    -webkit-animation-iteration-count: infinite;   
+    -webkit-animation-direction: forward;  
 }
 
 @-webkit-keyframes paulGuessing {
   0%, 35%, 65%, 90%, 100% {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
 
   0% {
-    -webkit-transform: translate3d(20%, 0, 0);
+    -webkit-transform: translate3d(0%, 0, 0);
   }
     
   15%{
     -webkit-transform: scale3d(0.85, 1.15, 1);
-    transform: scale3d(0.85, 1.15, 1);
   }
 
   25%{
     -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
   }    
 
   35% {
-    -webkit-transform: translate3d(110%, 0, 0);
+    -webkit-transform: translate3d(-20%, 0, 0);
   }
 
   45%{
@@ -201,8 +197,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
   } 
 
   65% {
-    -webkit-transform: translate3d(160%, 0, 0);
-    transform: translate3d(160%, 0, 0);
+    -webkit-transform: translate3d(60%, 0, 0);
   }
 
   75%{
@@ -214,8 +209,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
   }    
 
   90% {
-    -webkit-transform: translate3d(40%, 0, 0);
-    transform: translate3d(40%, 0, 0);
+    -webkit-transform: translate3d(-120%, 10%, 0);
   }
 
   85%{
@@ -223,7 +217,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
   }    
     
   100% {
-    -webkit-transform: none;
+    -webkit-transform: translate3d(-110%, 20%, 0);
   }
 }
 
@@ -383,6 +377,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     border: 5px solid black;
     border-top: none;
     font-family: "Arial Black", Gadget, sans-serif;
+    color: black;
     text-align: right;
     padding-right: 1em;
     background: #AC4700;}
@@ -396,6 +391,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     border: 5px solid black;
     border-top: none;
     font-family: "Arial Black", Gadget, sans-serif;
+    color: black;
     text-align: right;
     padding-right: 1em;
     background: #AC4700;}
