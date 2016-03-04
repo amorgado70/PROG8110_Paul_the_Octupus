@@ -36,9 +36,10 @@ $(document).ready(function(){
             $("#flagEngland").hide();
             $("#flagUruguay").hide();
             $("#paulArea").hide();            
-            $("#crossX").hide();
+            $("#score").hide();
             $("#restart").hide();
             $("#portraitMessage").show();
+            $("#history").show();
             $("#paulEntrance").show();
         }
     }
@@ -46,10 +47,11 @@ $(document).ready(function(){
  function initGame(){
                     
     $("#portraitMessage").hide();
+     $("#history").hide();
     $("#paulEntrance").hide();
     $("#restart").show();
     $("#paulArea").show();
-    $("#crossX").show();
+    $("#score").show();
     $("#cage").addClass("cageIn");
     $("#paulPlace").addClass("paulLocked");
     $("#pageHeader").removeClass("bounceInDown");

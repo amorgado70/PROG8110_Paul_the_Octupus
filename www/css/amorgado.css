@@ -9,6 +9,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{
     background-color: white;
     text-shadow: none;
+    color: #0A3072;
 }
 
 /* Page Header */
@@ -31,7 +32,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     padding: 0.5em 1em;
     font-family: "Arial Black", Gadget, sans-serif;
     text-decoration: none;
-    color: black;
+    color: #0A3072;
     background-color: #AC4700;
     -webkit-border-radius: 5px;
 }
@@ -76,12 +77,15 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     display: none;
     position: relative;    
     top: 5em;
-}
-
-.portraitMessage{
+    padding-left: 1em;
+    padding-right: 2em;
+    text-align: justify;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-family: "Arial", Gadget, sans-serif;
+}
+
+.portraitMessage{
 	-webkit-animation-name: slideInLeft;    
 	-webkit-animation-duration: 2s;    
     -webkit-animation-fill-mode: both;    
@@ -97,6 +101,15 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 #portraitMessage3{
    -webkit-animation-delay: 4s;    
      
+}
+
+#history{
+    padding-left: 1em;
+    padding-right: 2em;
+    text-align: justify;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-family: "Arial", Gadget, sans-serif;
 }
 
 @-webkit-keyframes slideInLeft {
@@ -129,10 +142,18 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     -webkit-animation-iteration-count: infinite;   
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 480px) {
     #paulEntrance {        
         width: 200px;
         height: 200px;
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 380px) {    
+    #paulEntrance {        
+        width: 150px;
+        height: 150px;
         margin-top: 120px;
     }
 }
@@ -171,8 +192,8 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 .paulGuessing {    
     -webkit-animation-name: paulGuessing;
-    -webkit-animation-delay: 2s;
-    -webkit-animation-duration: 36s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-duration: 12s;
     -webkit-animation-fill-mode: both;
     -webkit-animation-direction: forward;  
 }
@@ -352,7 +373,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     height: 26px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    border: 1px solid black;
+    border: 1px solid #0A3072;
 }
 
 #flagGermany {    
@@ -389,28 +410,28 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     top: 65%;
     left: 2%;   
     width: 25%;
-    height: 10%;
-    border: 5px solid black;
-    border-top: none;
+    height: 15%;
+    border: 5px solid #0A3072;
+    border-top: 1px solid #0A3072;
     font-family: "Arial Black", Gadget, sans-serif;
-    color: black;
+    color: #0A3072;
     text-align: right;
     padding-right: 1em;
-    background: #AC4700;}
+    background-image: url("../img/foodBox.png");}
 
 #foodBox2 {     
     position: absolute;
     top: 65%;
     left: 68%;   
     width: 25%;
-    height: 10%;
-    border: 5px solid black;
-    border-top: none;
+    height: 15%;
+    border: 5px solid #0A3072;
+    border-top: 1px solid #0A3072;
     font-family: "Arial Black", Gadget, sans-serif;
-    color: black;
+    color: #0A3072;
     text-align: right;
     padding-right: 1em;
-    background: #AC4700;}
+    background-image: url("../img/foodBox.png");}
 
 /* For landscape width is heigh and vice-versa */
 @media screen and (max-height: 380px) {
@@ -424,17 +445,17 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     }
 }
 
-#crossX {     
+#score {     
     position: absolute;
     top: 65%;
-    left: 45%;
+    left: 42%;
     font-family: "Arial Black", Gadget, sans-serif;
-    color: black;
-    font-size: 4.5em;}
+    color: #0A3072;
+    font-size: 3.5em;}
 
 /* For landscape width is heigh and vice-versa */
 @media screen and (max-height: 380px) {
-    #crossX {
+    #score {
         top: 65%;
         font-size: 2em;
     }    
