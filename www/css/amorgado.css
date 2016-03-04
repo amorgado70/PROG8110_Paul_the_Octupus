@@ -6,6 +6,11 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 /* Color pallete : http://paletton.com/#uid=30q0u0krew0gWHPm9A3vBrAyPlC */
 
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{
+    background-color: white;
+    text-shadow: none;
+}
+
 /* Page Header */
 #pageHeader{
     position: absolute;    
