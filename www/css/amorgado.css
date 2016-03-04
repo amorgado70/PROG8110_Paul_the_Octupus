@@ -121,12 +121,12 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     margin-right: auto;
     background-size: contain;
     background-image: url("../img/paul-the-octopus.jpg");   
-  -webkit-animation-name: paulEntrance;
-  -webkit-animation-delay: 2s;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-direction: alternate;
-  -webkit-animation-iteration-count: infinite;   
+    -webkit-animation-name: paulEntrance;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;   
 }
 
 @media screen and (max-width: 380px) {
@@ -380,7 +380,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 #foodBox1 { 
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 2%;   
     width: 25%;
     height: 10%;
@@ -394,7 +394,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 #foodBox2 {     
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 68%;   
     width: 25%;
     height: 10%;
@@ -406,6 +406,18 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     padding-right: 1em;
     background: #AC4700;}
 
+/* For landscape width is heigh and vice-versa */
+@media screen and (max-height: 380px) {
+    #foodBox1 {
+        top: 65%;
+        font-size: 75%;
+    }    
+    #foodBox2 {
+        top: 65%;
+        font-size: 75%;
+    }
+}
+
 #crossX {     
     position: absolute;
     top: 60%;
@@ -413,3 +425,12 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     font-family: "Arial Black", Gadget, sans-serif;
     color: black;
     font-size: 5em;}
+
+/* For landscape width is heigh and vice-versa */
+@media screen and (max-height: 380px) {
+    #crossX {
+        top: 65%;
+        font-size: 2em;
+    }    
+
+}
