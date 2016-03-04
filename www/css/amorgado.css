@@ -377,32 +377,32 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 #flagGermany {    
     left: 8%;
-    background-image: url(img/germany.png);
+    background-image: url(/img/germany.png);
 }
 
 #flagArgentina {    
     left: 20%;
-    background-image: url(img/argentina.png);}
+    background-image: url(/img/argentina.png);}
 
 #flagSpain {    
     left: 32%;
-    background-image: url(img/spain.png);}
+    background-image: url(/img/spain.png);}
 
 #flagBrazil {    
     left: 44%;
-    background-image: url(img/brazil.png);}
+    background-image: url(/img/brazil.png);}
 
 #flagNetherlands {    
     left: 56%;
-    background-image: url(img/ghana.png);}
+    background-image: url(/img/ghana.png);}
 
 #flagEngland {    
     left: 68%;
-    background-image: url(img/england.png);}
+    background-image: url(/img/england.png);}
 
 #flagUruguay {    
     left: 80%;
-    background-image: url(img/uruguay.png);}
+    background-image: url(/img/uruguay.png);}
 
 #foodBox1 {     
     position: absolute;

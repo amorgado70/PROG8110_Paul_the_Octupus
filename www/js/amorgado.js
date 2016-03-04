@@ -16,7 +16,7 @@ $(document).ready(function(){
 // Checks device orientation and changes display accordingly
     var checkOrientation = function() {
         if (window.orientation == 90) {
-/*            $('#foodBox1').show();
+            $('#foodBox1').show();
             $('#foodBox2').show();
             $('#flagGermany').show();
             $('#flagArgentina').show();
@@ -25,14 +25,14 @@ $(document).ready(function(){
             $('#flagNetherlands').show();
             $('#flagEngland').show();
             $('#flagUruguay').show();
-            $( initDragDrop ); */          
+            $( initDragDrop );         
             $("#portraitMessage").hide();
             $("#paulEntrance").hide();
             $("#paulLocked").show();
             $("#pageHeader").removeClass("bounceInDown");
         }
         else {
- /*           $('#foodBox1').hide();
+            $('#foodBox1').hide();
             $('#foodBox2').hide();
             $('#flagGermany').hide();
             $('#flagArgentina').hide();
@@ -40,7 +40,7 @@ $(document).ready(function(){
             $('#flagBrazil').hide();
             $('#flagNetherlands').hide();
             $('#flagEngland').hide();
-            $('#flagUruguay').hide(); */
+            $('#flagUruguay').hide();
             $("#paulLocked").hide();
             $("#portraitMessage").show();
             $("#paulEntrance").show();
@@ -50,7 +50,6 @@ $(document).ready(function(){
 // Drag and Drop
  
 function initDragDrop() {
-    /*
   $('#flagGermany').draggable();
   $('#flagArgentina').draggable();
   $('#flagSpain').draggable();
@@ -64,7 +63,6 @@ function initDragDrop() {
   $('#foodBox2').droppable( {
     drop: handleDropEvent
   } );
-  */
 }
  
 function handleDropEvent( event, ui ) {
