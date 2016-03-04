@@ -15,11 +15,8 @@ $(document).ready(function(){
             $('#flagUruguay').show();
             $( initDragDrop );            
             $("#portraitMessage").hide();
-            $("#paulLocked").show();
-            $("p").css({"color": "black"})
-            $("#paul").removeClass("paulEntrance");
-            $("#pageHeader").removeClass("animated bounceInDown");
-            /*$("#paul").addClass("paulGuessing");*/
+            $("#paulEntrance").hide();           
+            $("#pageHeader").removeClass("bounceInDown");
         }
         else {
             $('#foodBox1').hide();
@@ -32,10 +29,7 @@ $(document).ready(function(){
             $('#flagEngland').hide();
             $('#flagUruguay').hide();
             $("#portraitMessage").show();
-            $("#paulLocked").hide();
-            $("p").css({"color": "blue"});
-            $("#paul").removeClass("paulGuessing");
-            $("#paul").addClass("paulEntrance");
+            $("#paulEntrance").show();
         }
     }        
     
@@ -43,6 +37,7 @@ $(document).ready(function(){
     window.addEventListener("orientationchange", function() {
         // Announce the new orientation number
         checkOrientation();
+	    alert(window.orientation);
     }, false);    
 
     // Check orientation on page load    
@@ -53,6 +48,7 @@ $(document).ready(function(){
 // Drag and Drop
  
 function initDragDrop() {
+    /*
   $('#flagGermany').draggable();
   $('#flagArgentina').draggable();
   $('#flagSpain').draggable();
@@ -66,6 +62,7 @@ function initDragDrop() {
   $('#foodBox2').droppable( {
     drop: handleDropEvent
   } );
+  */
 }
  
 function handleDropEvent( event, ui ) {
