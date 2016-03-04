@@ -16,15 +16,15 @@ $(document).ready(function(){
 // Checks device orientation and changes display accordingly
     var checkOrientation = function() {
         if (window.orientation == 90) {
-            $('#foodBox1').show();
-            $('#foodBox2').show();
-            $('#flagGermany').show();
-            $('#flagArgentina').show();
-            $('#flagSpain').show();
-            $('#flagBrazil').show();
-            $('#flagNetherlands').show();
-            $('#flagEngland').show();
-            $('#flagUruguay').show();
+            $("#foodBox1").show();
+            $("#foodBox2").show();
+            $("#flagGermany").show();
+            $("#flagArgentina").show();
+            $("#flagSpain").show();
+            $("#flagBrazil").show();
+            $("#flagNetherlands").show();
+            $("#flagEngland").show();
+            $("#flagUruguay").show();
             $( initDragDrop );         
             $("#portraitMessage").hide();
             $("#paulEntrance").hide();
@@ -32,15 +32,15 @@ $(document).ready(function(){
             $("#pageHeader").removeClass("bounceInDown");
         }
         else {
-            $('#foodBox1').hide();
-            $('#foodBox2').hide();
-            $('#flagGermany').hide();
-            $('#flagArgentina').hide();
-            $('#flagSpain').hide();
-            $('#flagBrazil').hide();
-            $('#flagNetherlands').hide();
-            $('#flagEngland').hide();
-            $('#flagUruguay').hide();
+            $("#foodBox1").hide();
+            $("#foodBox2").hide();
+            $("#flagGermany").hide();
+            $("#flagArgentina").hide();
+            $("#flagSpain").hide();
+            $("#flagBrazil").hide();
+            $("#flagNetherlands").hide();
+            $("#flagEngland").hide();
+            $("#flagUruguay").hide();
             $("#paulLocked").hide();
             $("#portraitMessage").show();
             $("#paulEntrance").show();
@@ -50,23 +50,36 @@ $(document).ready(function(){
 // Drag and Drop
  
 function initDragDrop() {
-  $('#flagGermany').draggable();
-  $('#flagArgentina').draggable();
-  $('#flagSpain').draggable();
-  $('#flagBrazil').draggable();
-  $('#flagNetherlands').draggable();
-  $('#flagEngland').draggable();
-  $('#flagUruguay').draggable();    
-  $('#foodBox1').droppable( {
+  $("#flagGermany").draggable();
+  $("#flagArgentina").draggable();
+  $("#flagSpain").draggable();
+  $("#flagBrazil").draggable();
+  $("#flagNetherlands").draggable();
+  $("#flagEngland").draggable();
+  $("#flagUruguay").draggable();    
+  $("#foodBox1").droppable( {
     drop: handleDropEvent
   } );      
-  $('#foodBox2').droppable( {
+  $("#foodBox2").droppable( {
     drop: handleDropEvent
   } );
 }
+
+var countDrops = 0;
  
 function handleDropEvent( event, ui ) {
   var draggable = ui.draggable;
-  alert( 'The square with ID "' + draggable.attr('id') + '" was dropped onto ' + $(this).attr('id') + ' me!');
+  /*var droppable = $(this).attr("id");
+  alert( 'The square with ID "' + draggable.attr("id") + '" was dropped onto ' + droppable + ' me!');*/
+  draggable.css({"top":$(this).css("top")});
+  draggable.css({"left":$(this).css("left")});     
+  draggable.draggable( 'disable' );
+  $(this).text(draggable.attr("id").substring(4,20));
+  $(this).droppable( 'disable' );
+  countDrops++;
+  if (countDrops == 2) {
+    /*alert( 'Fim de jogo' );*/
+    startGuessing();
+  }
 }
 
