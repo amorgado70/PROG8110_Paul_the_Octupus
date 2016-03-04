@@ -77,11 +77,9 @@ function initDragDrop() {
   $("#flagBrazil").draggable();
   $("#flagNetherlands").draggable();
   $("#flagEngland").draggable();
-  $("#flagUruguay").draggable();    
+  $("#flagUruguay").draggable();
+  $("#foodBox1Msg").addClass("flash");  
   $("#foodBox1").droppable( {
-    drop: handleDropEvent
-  } );      
-  $("#foodBox2").droppable( {
     drop: handleDropEvent
   } );
 }
@@ -94,15 +92,21 @@ function handleDropEvent( event, ui ) {
   /*alert( 'The square with ID "' + draggable.attr("id") + '" was dropped onto ' + droppable + ' me!');}*/
   var oponent = draggable.attr("id").substring(4,20);
   if (droppable == "foodBox1"){      
-      $("#winner").text(oponent);
+      $("#winner").text(oponent.toUpperCase());
   }
   draggable.css({"top":$(this).css("top")});
   draggable.css({"left":$(this).css("left")});     
   draggable.draggable( 'disable' );
   $(this).text(oponent);
   $(this).droppable( 'disable' );
+  $("#foodBox1Msg").removeClass("flash");
+  $("#foodBox2").droppable( {
+    drop: handleDropEvent
+  } );    
+  $("#foodBox2Msg").addClass("flash");
   countDrops++;
   if (countDrops == 2) {
+  $("#foodBox2Msg").removeClass("flash");
   $("#flagGermany").draggable( 'disable' );
   $("#flagArgentina").draggable( 'disable' );
   $("#flagSpain").draggable( 'disable' );
@@ -129,7 +133,7 @@ function score1(){
 
 function score2(){
     $("#score").text('1 X 1');
-    setTimeout(score3, 3000);
+    setTimeout(score3, 5000);
 }
 
 function score3(){

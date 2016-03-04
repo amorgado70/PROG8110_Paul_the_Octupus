@@ -123,9 +123,15 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     padding-left: 1em;
     padding-right: 2em;
     text-align: justify;
-    margin-top: 0.8em;
+    margin-top: 1.8em;
     margin-bottom: 0.5em;
     font-family: "Arial", Gadget, sans-serif;
+}
+
+@media screen and (max-width: 580px) {
+    #history {        
+        margin-top: 0.8em;
+    }
 }
 
 @-webkit-keyframes slideInLeft {
@@ -435,6 +441,36 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     padding-right: 1em;
     background-image: url("../img/foodBox.png");}
 
+#foodBox1Msg {
+        -webkit-animation-delay: 3.5s;
+}
+
+#foodBox2Msg {
+        -webkit-animation-delay: 0s;
+}
+
+.flash{
+    -webkit-animation-name: flash;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-direction: normal;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  
+}
+
 #foodBox2 {     
     position: absolute;
     top: 65%;
@@ -481,6 +517,8 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 #finalResult {
     display: none;
     position: absolute;
-    top: 25%;
+    top: 21%;
     left: 8%;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-weight: bold;    
 }
