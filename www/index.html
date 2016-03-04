@@ -10,7 +10,8 @@
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/jquery-ui-1.11.4.js"></script>
 		<script src="js/jquery.mobile.min.js"></script>
-        <script src="js/jquery.ui.touch-punch.min.js"></script>
+        <!-- Touch-punch is only necessary in mobile devices -->
+        <!--<script src="js/jquery.ui.touch-punch.min.js"></script>-->
 
         <script src="js/amorgado.js"></script>        
         
@@ -21,7 +22,7 @@
         </div>        
         <div id="portraitMessage">
             <div id="portraitMessage1" class="portraitMessage">This aquarium is a little narrow for Paul the Octopus.</div>
-            <div id="portraitMessage2" class="portraitMessage">Please rotate your device</div>
+            <div id="portraitMessage2" class="portraitMessage">Rotate your device to start playing...</div>
             <img id="portraitMessage3" class="portraitMessage" src="img/rotate-your-phone.jpg" style="width:80px;height:70px;"/>
         </div>
 
@@ -34,9 +35,10 @@
         </div>
         
         <div id="content" style="height: 100%;">
+            <div>The winner will be <span id="winner"></span></div>
             <div id="foodBox1">drag and drop 1st oponent flag here</div>
             <div id="foodBox2">drag and drop 2nd oponent flag here</div>
-            <div id="score">0X0</div>
+            <div id="score">0 X 0</div>
             <div id="flagGermany" class="allflags"> </div>    
             <div id="flagArgentina" class="allflags"> </div>
             <div id="flagSpain" class="allflags"> </div>
@@ -49,8 +51,7 @@
         <div id="history">
             <!-- Source of text : https://en.wikipedia.org/wiki/Paul_the_Octopus -->
             <div>Paul the Octopus was an octopus who supposedly predicted the results of soccer matches. He made many accurate predictions which brought him worldwide attention as an animal oracle.</div>
-            <div>During divinations, Paul's keepers would present him with two boxes containing food. Each box was decorated with the different team flags of the competitors of an upcoming football match. Whichever box Paul ate from first would be considered his prediction for which team would win the match.</div>
-            <div><b>Now is your turn to check Paul's guessings.</b></div>
+            <div>During divinations, Paul's keepers would present him with two boxes containing food. Each box was decorated with the different team flags of the competitors of an upcoming football match. Whichever box Paul ate from first would be considered his prediction for which team would win the match.</div>            
         </div>
         
     </body>

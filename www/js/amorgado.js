@@ -89,8 +89,8 @@ var countDrops = 0;
  
 function handleDropEvent( event, ui ) {
   var draggable = ui.draggable;
-  /*var droppable = $(this).attr("id");
-  alert( 'The square with ID "' + draggable.attr("id") + '" was dropped onto ' + droppable + ' me!');*/
+  var droppable = $(this).attr("id");
+  /*alert( 'The square with ID "' + draggable.attr("id") + '" was dropped onto ' + droppable + ' me!');*/
   draggable.css({"top":$(this).css("top")});
   draggable.css({"left":$(this).css("left")});     
   draggable.draggable( 'disable' );
@@ -98,6 +98,13 @@ function handleDropEvent( event, ui ) {
   $(this).droppable( 'disable' );
   countDrops++;
   if (countDrops == 2) {
+  $("#flagGermany").draggable( 'disable' );
+  $("#flagArgentina").draggable( 'disable' );
+  $("#flagSpain").draggable( 'disable' );
+  $("#flagBrazil").draggable( 'disable' );
+  $("#flagNetherlands").draggable( 'disable' );
+  $("#flagEngland").draggable( 'disable' );
+  $("#flagUruguay").draggable( 'disable' );      
     startGuessing();
   }
 }
@@ -106,11 +113,23 @@ function startGuessing(){
     $("#cage").removeClass("cageIn");
     $("#cage").addClass("cageOut");
     $("#paulPlace").removeClass("paulLocked");
-    $("#paulPlace").addClass("paulGuessing");
-    
+    $("#paulPlace").addClass("paulGuessing1");
+    setTimeout(score1, 3000);         
  }
 
-function paulGuessing(){
-
+function score1(){
+    $("#score").text('1 X 0');
+    setTimeout(score2, 3000);
 }
+
+function score2(){
+    $("#score").text('1 X 1');
+    setTimeout(score3, 3000);
+}
+
+function score3(){
+    $("#score").text('2 X 1');
+    
+}
+
 

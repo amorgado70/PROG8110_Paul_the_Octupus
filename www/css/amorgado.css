@@ -99,15 +99,31 @@ This animation solution for PhonegapBuild works only with "-webkit-".
      
 }
 #portraitMessage3{
-   -webkit-animation-delay: 4s;    
-     
+    margin-top: 1em;
+   -webkit-animation-name: rotateIn;    
+   -webkit-animation-delay: 5s;
+   -webkit-animation-duration: 3s;
+}
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center;
+    -webkit-transform: none;
+    opacity: 1;
+  }
 }
 
 #history{
     padding-left: 1em;
     padding-right: 2em;
     text-align: justify;
-    margin-top: 1.2em;
+    margin-top: 0.8em;
     margin-bottom: 0.5em;
     font-family: "Arial", Gadget, sans-serif;
 }
@@ -128,7 +144,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 #paulEntrance {
     display: none;    
     width: 300px;
-    height: 300px;
+    height: 200px;
     margin-top: 120px;
     margin-left: auto;
     margin-right: auto;
@@ -145,7 +161,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 @media screen and (max-width: 480px) {
     #paulEntrance {        
         width: 200px;
-        height: 200px;
+        height: 133px;
         margin-top: 60px;
     }
 }
@@ -153,7 +169,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 @media screen and (max-width: 380px) {    
     #paulEntrance {        
         width: 150px;
-        height: 150px;
+        height: 100px;
         margin-top: 120px;
     }
 }
@@ -190,15 +206,15 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 /* Paul Guessing */
 
-.paulGuessing {    
-    -webkit-animation-name: paulGuessing;
+.paulGuessing1 {    
+    -webkit-animation-name: paulGuessing1;
     -webkit-animation-delay: 0s;
     -webkit-animation-duration: 12s;
     -webkit-animation-fill-mode: both;
     -webkit-animation-direction: forward;  
 }
 
-@-webkit-keyframes paulGuessing {
+@-webkit-keyframes paulGuessing1 {
   0%, 35%, 65%, 90%, 100% {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   }
@@ -448,7 +464,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 #score {     
     position: absolute;
     top: 65%;
-    left: 42%;
+    left: 40%;
     font-family: "Arial Black", Gadget, sans-serif;
     color: #0A3072;
     font-size: 3.5em;}
@@ -456,7 +472,7 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 /* For landscape width is heigh and vice-versa */
 @media screen and (max-height: 380px) {
     #score {
-        top: 65%;
+        top: 68%;
         font-size: 2em;
     }    
 
