@@ -16,24 +16,8 @@ $(document).ready(function(){
 // Checks device orientation and changes display accordingly
     var checkOrientation = function() {
         if (window.orientation == 90) {
-            $("#foodBox1").show();
-            $("#foodBox2").show();
-            $("#flagGermany").show();
-            $("#flagArgentina").show();
-            $("#flagSpain").show();
-            $("#flagBrazil").show();
-            $("#flagNetherlands").show();
-            $("#flagEngland").show();
-            $("#flagUruguay").show();
-            $( initDragDrop );         
-            $("#portraitMessage").hide();
-            $("#paulEntrance").hide();
-            $("#restart").show();
-            $("#paulArea").show();
-            $("#crossX").show();
-            $("#cage").addClass("cageIn");
-            $("#paulPlace").addClass("paulLocked");
-            $("#pageHeader").removeClass("bounceInDown");
+            $( initGame );
+
         }
         else {
             $("#foodBox1").hide();
@@ -53,6 +37,27 @@ $(document).ready(function(){
         }
     }
 
+ function initGame(){
+            $("#foodBox1").show();
+            $("#foodBox2").show();
+            $("#flagGermany").show();
+            $("#flagArgentina").show();
+            $("#flagSpain").show();
+            $("#flagBrazil").show();
+            $("#flagNetherlands").show();
+            $("#flagEngland").show();
+            $("#flagUruguay").show();                     
+            $("#portraitMessage").hide();
+            $("#paulEntrance").hide();
+            $("#restart").show();
+            $("#paulArea").show();
+            $("#crossX").show();
+            $("#cage").addClass("cageIn");
+            $("#paulPlace").addClass("paulLocked");
+            $("#pageHeader").removeClass("bounceInDown");
+     $( initDragDrop );
+ }
+    
 // Drag and Drop
  
 function initDragDrop() {
