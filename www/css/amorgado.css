@@ -7,11 +7,15 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 /* Color pallete : http://paletton.com/#uid=30q0u0krew0gWHPm9A3vBrAyPlC */
 
 /* Page Header */
-
 #pageHeader{
+    position: absolute;    
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
 	padding-top: 1em;
 	padding-bottom: 1em;
-	padding-left: 0.5em;
+    margin-bottom: 1em;
     font-family: "Arial Black", Gadget, sans-serif;
     font-weight: bold;
 	background-color: #22B802;
@@ -46,6 +50,44 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
   100% {
     -webkit-transform: none;
+  }
+}
+
+/* Portrait Messages */
+#portraitMessage{
+    position: relative;    
+    top: 5em;
+}
+
+.portraitMessage{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-family: "Arial", Gadget, sans-serif;
+	-webkit-animation-name: slideInLeft;    
+	-webkit-animation-duration: 2s;    
+    -webkit-animation-fill-mode: both;    
+}
+
+#portraitMessage1{
+   -webkit-animation-delay: 2s;        
+}
+#portraitMessage2{
+   -webkit-animation-delay: 3s;    
+     
+}
+#portraitMessage3{
+   -webkit-animation-delay: 4s;    
+     
+}
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
@@ -383,17 +425,3 @@ This animation solution for PhonegapBuild works only with "-webkit-".
     border: 5px solid black;
     border-top: none;
     background: #AC4700;}
-
-
-#portraitMessage1{
-   -webkit-animation-delay: 2s;    
-  -animation-delay: 2s;     
-}
-#portraitMessage2{
-   -webkit-animation-delay: 3s;    
-  -animation-delay: 3s;     
-}
-#portraitMessage2{
-   -webkit-animation-delay: 4s;    
-  -animation-delay: 4s;     
-}
