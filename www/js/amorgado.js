@@ -44,15 +44,7 @@ $(document).ready(function(){
     }
 
  function initGame(){
-    $("#foodBox1").show();
-    $("#foodBox2").show();
-    $("#flagGermany").show();
-    $("#flagArgentina").show();
-    $("#flagSpain").show();
-    $("#flagBrazil").show();
-    $("#flagNetherlands").show();
-    $("#flagEngland").show();
-    $("#flagUruguay").show();                     
+                    
     $("#portraitMessage").hide();
     $("#paulEntrance").hide();
     $("#restart").show();
@@ -61,6 +53,15 @@ $(document).ready(function(){
     $("#cage").addClass("cageIn");
     $("#paulPlace").addClass("paulLocked");
     $("#pageHeader").removeClass("bounceInDown");
+    $("#foodBox1").show();
+    $("#foodBox2").show();
+    $("#flagGermany").show();
+    $("#flagArgentina").show();
+    $("#flagSpain").show();
+    $("#flagBrazil").show();
+    $("#flagNetherlands").show();
+    $("#flagEngland").show();
+    $("#flagUruguay").show();      
     $( initDragDrop );
  }
     

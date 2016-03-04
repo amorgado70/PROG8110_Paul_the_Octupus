@@ -231,13 +231,19 @@ This animation solution for PhonegapBuild works only with "-webkit-".
   }
 }
 
-#paulArea{
+#paulArea {
     position: relative;
     left: 35%;
-    top: 5em;
+    top: 7em;
     width: 100%;    
     margin-left: auto;
     margin-right: auto;
+}
+
+@media screen and (max-width: 900px) {
+    #paulArea {        
+    top: 5em;
+    }
 }
 
 /* Paul Locked */
@@ -420,11 +426,11 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 #crossX {     
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 45%;
     font-family: "Arial Black", Gadget, sans-serif;
     color: black;
-    font-size: 5em;}
+    font-size: 4.5em;}
 
 /* For landscape width is heigh and vice-versa */
 @media screen and (max-height: 380px) {
