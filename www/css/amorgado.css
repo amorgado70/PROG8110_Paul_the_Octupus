@@ -28,7 +28,9 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 }
 
 #restart{
-    
+    position: absolute;    
+    top: 3.8em;
+    left: 78%;    
     padding: 0.5em 1em;
     font-family: "Arial Black", Gadget, sans-serif;
     text-decoration: none;
@@ -417,15 +419,15 @@ This animation solution for PhonegapBuild works only with "-webkit-".
 
 #flagNetherlands {    
     left: 56%;
-    background-image: url("../img/ghana.png");}
+    background-image: url("../img/netherlands.png");}
 
 #flagEngland {    
     left: 68%;
     background-image: url("../img/england.png");}
 
-#flagUruguay {    
+#flagGhana {    
     left: 80%;
-    background-image: url("../img/uruguay.png");}
+    background-image: url("../img/ghana.png");}
 
 #foodBox1 { 
     position: absolute;

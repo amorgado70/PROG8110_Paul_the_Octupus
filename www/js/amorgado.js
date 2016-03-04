@@ -34,7 +34,7 @@ $(document).ready(function(){
             $("#flagBrazil").hide();
             $("#flagNetherlands").hide();
             $("#flagEngland").hide();
-            $("#flagUruguay").hide();
+            $("#flagGhana").hide();
             $("#paulArea").hide();            
             $("#score").hide();
             $("#finalResult").hide();
@@ -64,7 +64,7 @@ $(document).ready(function(){
     $("#flagBrazil").show();
     $("#flagNetherlands").show();
     $("#flagEngland").show();
-    $("#flagUruguay").show();          
+    $("#flagGhana").show();          
     $( initDragDrop );
  }
     
@@ -77,7 +77,7 @@ function initDragDrop() {
   $("#flagBrazil").draggable();
   $("#flagNetherlands").draggable();
   $("#flagEngland").draggable();
-  $("#flagUruguay").draggable();
+  $("#flagGhana").draggable();
   $("#foodBox1Msg").addClass("flash");  
   $("#foodBox1").droppable( {
     drop: handleDropEvent
@@ -113,7 +113,7 @@ function handleDropEvent( event, ui ) {
   $("#flagBrazil").draggable( 'disable' );
   $("#flagNetherlands").draggable( 'disable' );
   $("#flagEngland").draggable( 'disable' );
-  $("#flagUruguay").draggable( 'disable' );      
+  $("#flagGhana").draggable( 'disable' );      
     startGuessing();
   }
 }
