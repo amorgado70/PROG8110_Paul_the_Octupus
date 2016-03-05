@@ -8,7 +8,7 @@ $(document).ready(function(){
     window.addEventListener("orientationchange", function() {
         // Announce the new orientation number
         checkOrientation();
-	    /* alert(window.orientation); */
+	    //alert(window.orientation);
     }, false);
     
 
@@ -22,10 +22,7 @@ $(document).ready(function(){
 
 // Checks device orientation and changes display accordingly
     var checkOrientation = function() {
-        if (window.orientation == 90) {
-            $( initGame );
-        }
-        else {
+        if (window.orientation == 0) {
             $("#foodBox1").hide();
             $("#foodBox2").hide();
             $("#flagGermany").hide();
@@ -35,6 +32,7 @@ $(document).ready(function(){
             $("#flagNetherlands").hide();
             $("#flagEngland").hide();
             $("#flagGhana").hide();
+            $("#aquarium").hide();            
             $("#paulArea").hide();            
             $("#score").hide();
             $("#finalResult").hide();
@@ -43,12 +41,15 @@ $(document).ready(function(){
             $("#history").show();
             $("#paulEntrance").show();
         }
+        else {
+            $( initGame );
+        }
     }
 
  function initGame(){
                     
     $("#portraitMessage").hide();
-     $("#history").hide();
+    $("#history").hide();
     $("#paulEntrance").hide();
     $("#restart").show();
     $("#paulArea").show();
@@ -64,7 +65,8 @@ $(document).ready(function(){
     $("#flagBrazil").show();
     $("#flagNetherlands").show();
     $("#flagEngland").show();
-    $("#flagGhana").show();          
+    $("#flagGhana").show();
+    $("#aquarium").show();     
     $( initDragDrop );
  }
     
@@ -78,10 +80,14 @@ function initDragDrop() {
   $("#flagNetherlands").draggable();
   $("#flagEngland").draggable();
   $("#flagGhana").draggable();
-  $("#foodBox1Msg").addClass("flash");  
+  $("#foodBox1Msg").addClass("flash");
+  $("#foodBox2Msg").addClass("flash");    
   $("#foodBox1").droppable( {
     drop: handleDropEvent
   } );
+    $("#foodBox2").droppable( {
+    drop: handleDropEvent
+    } );    
 }
 
 var countDrops = 0;
@@ -99,14 +105,9 @@ function handleDropEvent( event, ui ) {
   draggable.draggable( 'disable' );
   $(this).text(oponent);
   $(this).droppable( 'disable' );
-  $("#foodBox1Msg").removeClass("flash");
-  $("#foodBox2").droppable( {
-    drop: handleDropEvent
-  } );    
-  $("#foodBox2Msg").addClass("flash");
+  $(this).removeClass("flash");    
   countDrops++;
   if (countDrops == 2) {
-  $("#foodBox2Msg").removeClass("flash");
   $("#flagGermany").draggable( 'disable' );
   $("#flagArgentina").draggable( 'disable' );
   $("#flagSpain").draggable( 'disable' );
